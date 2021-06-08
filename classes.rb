@@ -1,12 +1,18 @@
 class Student
   # replaces getters and setters on 11-17
-  attr_accessor :first_name, :last_name, :email, :username
 
-  @first_name
-  @last_name
-  @email
-  @username
-  @password
+  attr_accessor :first_name, :last_name, :email, :username
+  
+  # getter only
+  # attr_reader :username
+
+  def initialize(firstname, lastname, username, email, password)
+    @first_name = firstname
+    @last_name = lastname
+    @username = username
+    @email = email
+    @password = password
+  end
 
   # setter and getter example
   # def first_name=(name)
@@ -17,12 +23,11 @@ class Student
   #   @first_name
   # end
 
-
   def to_s
-    "First name: #{@first_name}"
+    "Full name: #{@first_name} #{@last_name}, Username: #{@username}, email: #{@email}"
   end
 end
 
-test_example = Student.new
-test_example.first_name = "Akihiko"
-puts test_example.first_name
+akihiko = Student.new("Akihiko", "Sanada", "aki_senpai", "aki.sanada@sees.jp", "tartarus")
+junpei = Student.new("Junpei", "Iori", "ace_detective", "jp.iori@sees.jp", "yukatan")
+puts akihiko
