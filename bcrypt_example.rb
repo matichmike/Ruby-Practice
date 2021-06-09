@@ -1,8 +1,9 @@
 require 'bcrypt'
 
 my_password = BCrypt::Password.create("my password")
+
 puts my_password
-puts my_password.version
-puts my_password.cost
-puts my_password == "my password"
-puts my_password == "not my password"
+
+hashed_pw = BCrypt::Password.new("$2a$12$BK2j4OyT182E1NVVOfQrEuu5DMpZmFFKh.ijl.SBUDwc2lV0OSYK.")
+
+puts hashed_pw == "my password"
